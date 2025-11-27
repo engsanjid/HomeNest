@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏡 HomeNest – Real Estate Platform (Next.js + Firebase Auth)
 
-## Getting Started
+HomeNest is a modern real-estate web application built with **Next.js (App Router)**,  
+**Firebase Authentication**, and a custom backend API.  
+Users can browse properties, view details, add their own listings, and manage them through protected pages.
 
-First, run the development server:
+Live Demo 👉 https://home-nest-beta.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Features
+
+### 🌐 Public Pages
+- Beautiful **Landing Page** with 7 sections
+- Responsive Navbar with routes
+- Properties Listing Page (grid of cards)
+- Property Details Page
+- User Reviews & Testimonials
+- Clean Footer with social links
+
+### 🔐 Authentication
+- Email/Password registration
+- Login with Google (Firebase Auth)
+- Client-side token stored in cookies
+
+### 🔒 Protected Pages
+Accessible only after login:
+
+- **Add Property**
+- **My Properties**
+- **My Ratings**
+- Delete & Update Properties
+- View individual property details
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend:
+- **Next.js (App Router)**
+- **React**
+- **Firebase Authentication**
+- **Tailwind CSS**
+- **DaisyUI**
+- **SweetAlert2**
+- **React Hot Toast**
+
+### Backend:
+- Custom Node.js server (Hosted on Vercel / Render)
+- API Base URL:https://homenest-server-nine.vercel.app/
+
+````
+src/
+├── app/
+│ ├── home/ # Homepage sections
+│ ├── login/ # Login page + form
+│ ├── register/ # Registration page
+│ ├── my-properties/ # Protected page
+│ ├── my-ratings/ # Protected page
+│ ├── add-property/ # Protected page
+│ ├── details/[id]/ # Property details
+│ ├── firebase/
+│ │ └── firebase.init.js
+│ ├── context/AuthProvider.jsx
+│ ├── layout.jsx
+│ └── page.jsx
+├── components/
+├── styles/
+└── .env.local
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
