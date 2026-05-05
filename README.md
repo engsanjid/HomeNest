@@ -45,10 +45,18 @@ Accessible only after login:
 - **SweetAlert2**
 - **React Hot Toast**
 
-### Backend:
-- Custom Node.js server (Hosted on Vercel / Render)
-- API Base URL:https://homenest-server-nine.vercel.app/
+## 🔗 Backend (Server)
 
+The backend for this project is built with Node.js and Express, and is deployed separately.
+
+👉 Server Live API: https://homenest-server-nine.vercel.app/  
+👉 GitHub Repository: https://github.com/engsanjid/homeNest-server-side
+
+### ⚙️ Backend Features
+- RESTful API for properties
+- JWT Authentication
+- CRUD operations (Add, Update, Delete properties)
+- User-specific data handling
 ````
 src/
 ├── app/
