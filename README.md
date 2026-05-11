@@ -49,7 +49,7 @@ Accessible only after login:
 
 The backend for this project is built with Node.js and Express, and is deployed separately.
 
-👉 Server Live API: https://homenest-server-nine.vercel.app/  
+👉 Server Live API: https://home-nest-server-side-eight.vercel.app/  
 👉 GitHub Repository: https://github.com/engsanjid/homeNest-server-side
 
 ### ⚙️ Backend Features

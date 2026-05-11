@@ -26,7 +26,7 @@ export default function MyRatings() {
       try {
         const token = await user.getIdToken();
         const res = await fetch(
-          `https://homenest-server-nine.vercel.app/my-reviews/${user.email}`,
+          `${import.meta.env.NEXT_PUBLIC_API_URL}/my-reviews/${user.email}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
