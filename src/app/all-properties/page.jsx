@@ -28,10 +28,10 @@ export default function AllProperties() {
   useEffect(() => {
     setLoading(true);
 
-    let url = `${import.meta.env.VITE_API_URL}/all-properties?sort=${sortOption}`;
+    let url = `${process.env.NEXT_PUBLIC_API_URL}/all-properties?sort=${sortOption}`;
 
     if (debouncedSearch !== "") {
-      url = `import.meta.env.${import.meta.env.VITE_API_URL}/all-properties?search=${debouncedSearch}&sort=${sortOption}`;
+      url = `${process.env.NEXT_PUBLIC_API_URL}/all-properties?search=${debouncedSearch}&sort=${sortOption}`;
     }
 
     fetch(url)

@@ -28,7 +28,7 @@ export default function AddProperty() {
       const token = await user.getIdToken();
 
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/all-properties`,
+        `${process.env.NEXT_PUBLIC_API_URL}/all-properties`,
         {
           method: "POST",
           headers: {

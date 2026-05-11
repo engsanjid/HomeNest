@@ -26,7 +26,7 @@ export default function MyRatings() {
       try {
         const token = await user.getIdToken();
         const res = await fetch(
-          `${import.meta.env.VITE_API_URL}/my-reviews/${user.email}`,
+          `${process.env.NEXT_PUBLIC_API_URL}/my-reviews/${user.email}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
