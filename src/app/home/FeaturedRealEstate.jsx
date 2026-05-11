@@ -8,7 +8,7 @@ export default function FeaturedRealEstate() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.NEXT_PUBLIC_API_URL}/featured-properties`)
+    fetch(`${import.meta.env.VITE_API_URL}/featured-properties`)
       .then((res) => res.json())
       .then((data) => {
         setProperties(data);

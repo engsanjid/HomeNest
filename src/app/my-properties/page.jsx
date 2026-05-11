@@ -27,7 +27,7 @@ export default function MyProperties() {
         const token = await user.getIdToken();
 
         const res = await fetch(
-          `${import.meta.env.NEXT_PUBLIC_API_URL}/my-properties/${user.email}`,
+          `${import.meta.env.VITE_API_URL}/my-properties/${user.email}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -65,7 +65,7 @@ export default function MyProperties() {
       const token = await user.getIdToken();
 
       const res = await fetch(
-        `${import.meta.env.NEXT_PUBLIC_API_URL}/property/${id}`,
+        `${import.meta.env.VITE_API_URL}/property/${id}`,
         {
           method: "DELETE",
           headers: {
