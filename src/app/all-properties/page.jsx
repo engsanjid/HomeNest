@@ -22,30 +22,31 @@ export default function AllProperties() {
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
-  // ------------------------------
-  // Fetch Properties
-  // ------------------------------
-  useEffect(() => {
-    setLoading(true);
+ 
+useEffect(() => {
+  let url = `${process.env.NEXT_PUBLIC_API_URL}/all-properties?sort=${sortOption}`;
 
-    let url = `${process.env.NEXT_PUBLIC_API_URL}/all-properties?sort=${sortOption}`;
+  console.log("FETCH URL:", url);
 
-    if (debouncedSearch !== "") {
-      url = `${process.env.NEXT_PUBLIC_API_URL}/all-properties?search=${debouncedSearch}&sort=${sortOption}`;
-    }
+  fetch(url)
+    .then((res) => {
+      console.log("STATUS:", res.status);
+      return res.json();
+    })
+    .then((data) => {
+      console.log("DATA:", data);
+      setProperties(data);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.log("FETCH ERROR:", err);
+      setLoading(false);
+    });
+}, [debouncedSearch, sortOption]);
 
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setProperties(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, [debouncedSearch, sortOption]);
+  
 
-  // ------------------------------
-  // Loading Spinner
-  // ------------------------------
+
   if (loading)
     return (
       <div className="flex justify-center items-center h-[60vh]">
@@ -130,8 +131,7 @@ export default function AllProperties() {
                 <div className="flex justify-end mt-4">
                   <Link
                     href={`/details/${p._id}`}
-                    className="btn btn-outline btn-sm border-primary text-primary 
-                               hover:bg-primary hover:text-white transition-all"
+                    className="btn btn-outline btn-sm border-primary text-primary hover:bg-primary hover:text-white transition-all"
                   >
                     View Details
                   </Link>
